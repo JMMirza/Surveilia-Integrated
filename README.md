@@ -1,6 +1,6 @@
 # Surveilia-Integrated
 This repository contain my FYP project, which is real time anomaly detection. We have used TSM-Model for this which is implemented on PyTorch and for Graphical User Interface we have used PyQt5. So the basic Libaries required for that are:
-import datetime
+"import datetime
 import sys
 import os
 import urllib.request
@@ -38,4 +38,4 @@ from threading import Thread
 import time
 import csv
 import glob
-import os
+import os"
