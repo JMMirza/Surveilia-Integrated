@@ -3,6 +3,7 @@ import sys
 import os
 import urllib.request
 import xlrd
+import pandas as pd
 from PyQt5 import QtGui as qtg
 from PyQt5 import QtWidgets as qtw, QtWidgets, QtCore
 from PyQt5 import QtCore as qtc
@@ -132,12 +133,13 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
 
         #######################LOGIN###########################################
         self.login1_pushButton.clicked.connect(self.Login)
+        self.alarm_toolButton.clicked.connect(self.anomaly_tableDetail)
 
     # Record Anaomlous event to a file
     def getStatsOfAbnormalActivity(self, cameraID):
         x = datetime.datetime.now()
         with open("./appData/Details.csv", mode="a") as csv_file:
-            fieldnames = ["Camera ID", "Event", "Date", "Time"]
+            fieldnames = ["CameraID", "Event", "Date", "Time"]
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             if csv_file.tell() == 0:
                 writer.writeheader()
@@ -145,8 +147,35 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
             time = str(x.strftime("%H:%M:%S"))
 
             writer.writerow(
-                {"Camera ID": cameraID, "Event": "Abnormal", "Date": date, "Time": time}
+                {"CameraID": cameraID, "Event": "Abnormal", "Date": date, "Time": time}
             )
+
+    ######################READ CSV FILE TO DISPLAY DATA IN QTABLEWIDGET###################
+
+    def anomaly_tableDetail(self):
+        self.menuStackedWidget.setCurrentIndex(2)
+        read_file = pd.read_csv(r"./appData/Details.csv")
+        read_file.to_excel(r"./appData/Details.xlsx", index=None, header=True)
+
+        self.anomaly_details = xlrd.open_workbook("./appData/Details.xlsx")
+        self.sheet = self.anomaly_details.sheet_by_index(0)
+        self.data = [
+            [self.sheet.cell_value(r, c) for c in range(self.sheet.ncols)]
+            for r in range(self.sheet.nrows)
+        ]
+        # print(self.data)
+        self.alarm_tableWidget.setColumnCount(4)
+        self.alarm_tableWidget.setRowCount(
+            self.sheet.nrows - 1
+        )  # same no.of rows as of csv file
+        for row, columnvalues in enumerate(self.data):
+            for column, value in enumerate(columnvalues):
+                self.item = QtWidgets.QTableWidgetItem(
+                    str(value)
+                )  # str is to also display the integer values
+                self.alarm_tableWidget.setItem(row - 1, column, self.item)
+                # to set the elements read only
+                self.item.setFlags(QtCore.Qt.ItemIsEnabled)
 
     def tsmmodel(self, f, check):
 
@@ -304,7 +333,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                     "Stream: " + str(check) + " " + categories[idx[0]],
                     (20, int(height / 16)),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    1,
+                    0.9,
                     (0, int(G), int(R)),
                     2,
                 )
@@ -323,7 +352,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                     "FPS: {:.1f} Frame/s".format(1 / current_time),
                     (350, int(height / 9)),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    0.7,
+                    0.5,
                     (255, 255, 255),
                     2,
                 )
@@ -333,7 +362,9 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                     path = "./appData/Anoamly_Clips/"
                     name = len(glob.glob(path + "*.avi"))
 
-                    getVidName = path + "Abnormal_Event_{0}.avi".format(name + 1)
+                    getVidName = path + "Abnormal_Event_{}_Cam_{}.avi".format(
+                        name + 1, check
+                    )
                     writer = cv2.VideoWriter(getVidName, fourcc, 30.0, (W, H), True)
 
                 # Saving Anaomlous Event Image and Clip
@@ -347,7 +378,9 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         path = "./appData/Anoamly_Images/"
                         index = len(glob.glob(path + "*.jpg"))
                         # imageName = getFileName(path+'.jpg')
-                        imageName = path + "Abnormal_Event_{0}.jpg".format(index + 1)
+                        imageName = path + "Abnormal_Event_{}_Cam_{}.jpg".format(
+                            index + 1, check
+                        )
                         cv2.imwrite(imageName, img)
 
                     # image_frame = np.concatenate((img, label), axis=0)
