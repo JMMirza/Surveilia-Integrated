@@ -310,7 +310,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         print(count, "-", categories[idx[0]], "Prob: ", probs[0])
 
                         current_time = t2 - t1
-                dim = (self.display_1.width(), self.display_1.height())
+                dim = (420, 420)
                 img = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
                 height, width, _ = img.shape
                 # height, width, _ = img.shape
@@ -350,9 +350,9 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                 cv2.putText(
                     img,
                     "FPS: {:.1f} Frame/s".format(1 / current_time),
-                    (350, int(height / 9)),
+                    (250, int(height / 9)),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
+                    0.6,
                     (255, 255, 255),
                     2,
                 )
@@ -385,6 +385,9 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
 
                     # image_frame = np.concatenate((img, label), axis=0)
                 if ret == True:
+                    """print(
+                        "Resolution: " + str(img.shape[0]) + " x " + str(img.shape[1])
+                    )"""
                     if check == 1:
                         dim = (self.display_1.width(), self.display_1.height())
                         img1 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)

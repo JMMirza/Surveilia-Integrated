@@ -874,7 +874,7 @@ background-color:black;
 </string>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>2</number>
               </property>
               <widget class="QWidget" name="welcome_page">
                <property name="styleSheet">
@@ -1549,7 +1549,7 @@ color:white;
 
     padding: 2px;
     border: 1px solid black;
-    font-size: 12px;
+    font-size: 15px;
 font-weight:bold;
 
 }
@@ -1577,10 +1577,10 @@ QTableWidget QTableCornerButton::section {
                      <bool>true</bool>
                     </attribute>
                     <attribute name="horizontalHeaderDefaultSectionSize">
-                     <number>140</number>
+                     <number>200</number>
                     </attribute>
                     <attribute name="horizontalHeaderMinimumSectionSize">
-                     <number>50</number>
+                     <number>60</number>
                     </attribute>
                     <attribute name="horizontalHeaderStretchLastSection">
                      <bool>true</bool>
@@ -1623,17 +1623,17 @@ QTableWidget QTableCornerButton::section {
                     </column>
                     <column>
                      <property name="text">
+                      <string>Event</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Date</string>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
                       <string>Time</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Alarm Description</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Anomaly Clip</string>
                      </property>
                     </column>
                    </widget>
