@@ -40,10 +40,9 @@ import glob
 import os
 
 
-count = 1
-
-
 class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
+    counter = 0
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.setupUi(self)
@@ -180,6 +179,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
     def tsmmodel(self, f, check):
 
         # os.environ[""] = "0"
+
         emptyString = ""
 
         print()
@@ -263,7 +263,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
         print("loading Video...")
         if f == emptyString:
             print("cam")
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(cv2.CAP_DSHOW)
         else:
             print("cam")
             cap = cv2.VideoCapture(f)
@@ -384,10 +384,8 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         cv2.imwrite(imageName, img)
 
                     # image_frame = np.concatenate((img, label), axis=0)
+
                 if ret == True:
-                    """print(
-                        "Resolution: " + str(img.shape[0]) + " x " + str(img.shape[1])
-                    )"""
                     if check == 1:
                         dim = (self.display_1.width(), self.display_1.height())
                         img1 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
@@ -401,10 +399,9 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                             qtg.QImage.Format_RGB888,
                         ).rgbSwapped()
                         self.display_1.setPixmap(qtg.QPixmap.fromImage(img1))
-                        # self.camSignal = 0
 
                     elif check == 2:
-                        dim = (self.display_2.width(), self.display_2.height())
+                        dim = (self.display_1.width(), self.display_1.height())
                         img2 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
                         height, width, _ = img2.shape
                         bytesPerLine = 3 * width
@@ -419,7 +416,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         # self.camSignal = 0
 
                     elif check == 3:
-                        dim = (self.display_3.width(), self.display_3.height())
+                        dim = (self.display_1.width(), self.display_1.height())
                         img3 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
                         height, width, _ = img3.shape
                         bytesPerLine = 3 * width
@@ -434,7 +431,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         # self.camSignal = 0
 
                     elif check == 4:
-                        dim = (self.display_4.width(), self.display_4.height())
+                        dim = (self.display_1.width(), self.display_1.height())
                         img4 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
                         height, width, _ = img4.shape
                         bytesPerLine = 3 * width
@@ -449,7 +446,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         # self.camSignal = 0
 
                     elif check == 5:
-                        dim = (self.display_5.width(), self.display_5.height())
+                        dim = (self.display_1.width(), self.display_1.height())
                         img5 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
                         height, width, _ = img5.shape
                         bytesPerLine = 3 * width
@@ -464,7 +461,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
                         # self.camSignal = 0
 
                     elif check == 6:
-                        dim = (self.display_6.width(), self.display_6.height())
+                        dim = (self.display_1.width(), self.display_1.height())
                         img6 = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
                         height, width, _ = img6.shape
                         bytesPerLine = 3 * width
@@ -544,7 +541,7 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
 
     # METHOD TO OPEN THE IP CAM THROUGH IP ADDRESS
     def openIPcam(self):
-        self.input = 1
+        self.input = 0
         url = str(self.addIPCam_field.text())
         self.menuStackedWidget.setCurrentIndex(1)
         t = Thread(target=self.tsmmodel, args=(url, self.camSignal))
@@ -556,44 +553,16 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
     # METHOD TO OPEN WEB CAM
     @pyqtSlot()
     def openWebcam(self):
-        self.input = 2
+        self.input = 0
         self.logic = 1
-        cap = cv2.VideoCapture(0)
-        date = datetime.datetime.now()
-        out = cv2.VideoWriter(
-            "D:/Video/Video_%s%s%sT%s%s%s.mp4"
-            % (date.year, date.month, date.day, date.hour, date.minute, date.second),
-            -1,
-            20.2,
-            (640, 480),
-        )
+        cap = 0
         self.menuStackedWidget.setCurrentIndex(1)
-        t1 = Thread(target=self.tsmmodel, args=(0, self.camSignal))
+        t1 = Thread(target=self.tsmmodel, args=(cap, self.camSignal))
         t1.start()
-
-        """while cap.isOpened():
-            # capture video frame by frame
-            ret, frame = cap.read()
-            print(frame)
-            if ret == True:
-                self.displayImage(frame, 1)
-                cv2.waitKey()
-
-                if self.logic == 1:
-                    out.write(frame)
-                    print("Camera Opened")
-
-                if self.logic == 0:
-                    break
-            else:
-                print("Else not found")"""
         # release everything when job is finished
-        cap.release()
-        out.release()
-        cv2.destroyAllWindows()
 
     # METHOD TO DISPLAY VIDEO(IMAGE BY IMAGE) IN THE BOX
-    def displayImage(self, img, window=1):
+    """def displayImage(self, img, window=1):
         qformat = QImage.Format_Indexed8
 
         if len(img.shape) == 3:
@@ -636,11 +605,11 @@ class ControlMainWindow(qtw.QMainWindow, Ui_surveiliaFrontEnd):
         elif self.camSignal == 6:
             # pix = pix.scaled(self.display_6.width(), self.display_6.height(), QtCore.Qt.KeepAspectRatio,QtCore.Qt.SmoothTransformation)
             self.display_6.setPixmap(pix)
-            # self.camSignal = 0
+            # self.camSignal = 0"""
 
     # METHOD TO OPEN FILE DIALOG
     def openFile(self):
-        self.input = 3
+        self.input = 0
         fileName, _ = QFileDialog.getOpenFileName(
             self, "Open Video", "", "Video Files (*.mp4 *.flv *.ts *.mts *.avi *.wmv)"
         )
@@ -832,8 +801,5 @@ if __name__ == "__main__":
     app = qtw.QApplication([])
     widget = ControlMainWindow()
     widget.show()
-    try:
-        app.exec_()
-
-    except:
-        print("EXITING")
+    # sys.exit(app.exec_())
+    app.exec_()
