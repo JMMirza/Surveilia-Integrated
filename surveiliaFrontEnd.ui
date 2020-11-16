@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1337</width>
-    <height>801</height>
+    <width>1280</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -78,7 +78,7 @@ background:transparent;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_4">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QStackedWidget" name="mainStackedWidget">
       <property name="styleSheet">
@@ -364,6 +364,27 @@ COLOR:red;</string>
                <string/>
               </property>
              </widget>
+             <widget class="QToolButton" name="eye_toolButton">
+              <property name="geometry">
+               <rect>
+                <x>320</x>
+                <y>250</y>
+                <width>27</width>
+                <height>22</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background: #2A2F3C ;
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="resource01.qrc">
+                <normaloff>:/logo/invisible-24.png</normaloff>:/logo/invisible-24.png</iconset>
+              </property>
+             </widget>
             </widget>
             <widget class="QToolButton" name="logo1_toolButton">
              <property name="geometry">
@@ -476,57 +497,11 @@ QToolButton:pressed{
             <enum>Qt::ToolButtonTextUnderIcon</enum>
            </property>
           </widget>
-          <widget class="QToolButton" name="storage_toolButton">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>270</y>
-             <width>90</width>
-             <height>71</height>
-            </rect>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>90</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>80</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>century gothic</family>
-             <pointsize>-1</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Storage</string>
-           </property>
-           <property name="icon">
-            <iconset>
-             <normaloff>database-5-24.png</normaloff>database-5-24.png</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>30</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="toolButtonStyle">
-            <enum>Qt::ToolButtonTextUnderIcon</enum>
-           </property>
-          </widget>
           <widget class="QToolButton" name="logout_toolButton">
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>630</y>
+             <y>550</y>
              <width>90</width>
              <height>71</height>
             </rect>
@@ -572,7 +547,7 @@ QToolButton:pressed{
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>450</y>
+             <y>460</y>
              <width>90</width>
              <height>71</height>
             </rect>
@@ -618,7 +593,7 @@ QToolButton:pressed{
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>540</y>
+             <y>280</y>
              <width>90</width>
              <height>71</height>
             </rect>
@@ -766,7 +741,7 @@ background-repeat:no-repeat;</string>
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>360</y>
+             <y>370</y>
              <width>90</width>
              <height>71</height>
             </rect>
@@ -809,7 +784,6 @@ background-repeat:no-repeat;</string>
            </property>
           </widget>
           <zorder>camera_toolButton</zorder>
-          <zorder>storage_toolButton</zorder>
           <zorder>users_toolButton</zorder>
           <zorder>logout_toolButton</zorder>
           <zorder>language_toolButton</zorder>
@@ -886,19 +860,82 @@ font-size: 24px;</string>
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QLabel" name="userName_label">
-                   <property name="styleSheet">
-                    <string notr="true">font-size: 18px;
+                  <layout class="QVBoxLayout" name="verticalLayout_21">
+                   <item>
+                    <spacer name="verticalSpacer_26">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>5</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="userName_label">
+                     <property name="styleSheet">
+                      <string notr="true">font-size:15px;
 text-align: right;
 </string>
-                   </property>
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_25">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>10</width>
+                       <height>10</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="dateTime_label">
+                     <property name="styleSheet">
+                      <string notr="true">text-align: right;
+font-size:15px;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_27">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>5</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
                  </item>
                  <item>
                   <spacer name="horizontalSpacer_26">
@@ -951,160 +988,162 @@ background-color:black;
 </string>
               </property>
               <property name="currentIndex">
-               <number>5</number>
+               <number>3</number>
               </property>
               <widget class="QWidget" name="welcome_page">
                <property name="styleSheet">
                 <string notr="true">BACKGROUND-COLOR:#2C313F;</string>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_21">
+               <layout class="QHBoxLayout" name="horizontalLayout_18">
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_18">
-                  <item>
-                   <spacer name="horizontalSpacer_21">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Maximum</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="frame_3">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>470</width>
-                      <height>500</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QPushButton:hover{
+                 <spacer name="horizontalSpacer_21">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Maximum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_3">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>470</width>
+                    <height>500</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton:hover{
 color:white;
 background-color:black;
 }</string>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <widget class="QToolButton" name="logo2_toolButton_2">
-                     <property name="geometry">
-                      <rect>
-                       <x>120</x>
-                       <y>50</y>
-                       <width>120</width>
-                       <height>120</height>
-                      </rect>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">BACKGROUND-COLOR:WHITE;</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                    </widget>
-                    <widget class="QLabel" name="logo2_label_2">
-                     <property name="geometry">
-                      <rect>
-                       <x>110</x>
-                       <y>60</y>
-                       <width>150</width>
-                       <height>100</height>
-                      </rect>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">background: transparent;</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="pixmap">
-                      <pixmap resource="resource01.qrc">:/logo/surveilialogo.PNG</pixmap>
-                     </property>
-                     <property name="scaledContents">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                    <widget class="QLabel" name="welcome_label">
-                     <property name="geometry">
-                      <rect>
-                       <x>30</x>
-                       <y>210</y>
-                       <width>321</width>
-                       <height>31</height>
-                      </rect>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">font-size:28px;</string>
-                     </property>
-                     <property name="text">
-                      <string>Welcome to SURVEILIA</string>
-                     </property>
-                    </widget>
-                    <widget class="QPushButton" name="getStarted_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>60</x>
-                       <y>357</y>
-                       <width>251</width>
-                       <height>41</height>
-                      </rect>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">background-color:#1C1D25;
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <widget class="QToolButton" name="logo2_toolButton_2">
+                   <property name="geometry">
+                    <rect>
+                     <x>120</x>
+                     <y>50</y>
+                     <width>120</width>
+                     <height>120</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">BACKGROUND-COLOR:WHITE;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="logo2_label_2">
+                   <property name="geometry">
+                    <rect>
+                     <x>110</x>
+                     <y>60</y>
+                     <width>150</width>
+                     <height>100</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background: transparent;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="resource01.qrc">:/logo/surveilialogo.PNG</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="welcome_label">
+                   <property name="geometry">
+                    <rect>
+                     <x>30</x>
+                     <y>210</y>
+                     <width>321</width>
+                     <height>31</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font-size:28px;</string>
+                   </property>
+                   <property name="text">
+                    <string>Welcome to SURVEILIA</string>
+                   </property>
+                  </widget>
+                  <widget class="QPushButton" name="getStarted_pushButton">
+                   <property name="geometry">
+                    <rect>
+                     <x>60</x>
+                     <y>357</y>
+                     <width>251</width>
+                     <height>41</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:#1C1D25;
 </string>
-                     </property>
-                     <property name="text">
-                      <string>GET STARTED</string>
-                     </property>
-                    </widget>
-                    <widget class="QLabel" name="welcomeName_label">
-                     <property name="geometry">
-                      <rect>
-                       <x>120</x>
-                       <y>260</y>
-                       <width>141</width>
-                       <height>21</height>
-                      </rect>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                    </widget>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_22">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Maximum</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
+                   </property>
+                   <property name="text">
+                    <string>GET STARTED</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="welcomeName_label">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>260</y>
+                     <width>341</width>
+                     <height>21</height>
+                    </rect>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">text-align:center;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_22">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Maximum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -1136,261 +1175,590 @@ background-color:black;
 }
 </string>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <layout class="QHBoxLayout" name="horizontalLayout_36">
                 <item>
                  <layout class="QGridLayout" name="gridLayout">
                   <item row="0" column="0">
-                   <widget class="QLabel" name="display_1">
-                    <property name="styleSheet">
-                     <string notr="true">background-color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <spacer name="horizontalSpacer_24">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="1" column="0">
-                   <spacer name="verticalSpacer_13">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="3">
-                   <spacer name="horizontalSpacer_19">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item row="0" column="4">
-                   <widget class="QLabel" name="display_5">
-                    <property name="styleSheet">
-                     <string notr="true">background-color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <item>
+                     <widget class="QLabel" name="display_1">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                   <item row="0" column="2">
-                   <widget class="QLabel" name="display_3">
-                    <property name="styleSheet">
-                     <string notr="true">background-color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="verticalLayout_17">
+                    <item>
+                     <widget class="QLabel" name="display_5">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
-                  <item row="2" column="0">
-                   <widget class="QLabel" name="display_2">
-                    <property name="styleSheet">
-                     <string notr="true">background-color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
+                  <item row="0" column="1">
+                   <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <item>
+                     <widget class="QLabel" name="display_2">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
-                  <item row="2" column="2">
-                   <widget class="QLabel" name="display_4">
-                    <property name="styleSheet">
-                     <string notr="true">background-color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
+                  <item row="1" column="0">
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <item>
+                     <widget class="QLabel" name="display_3">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
-                  <item row="2" column="4">
-                   <widget class="QLabel" name="display_6">
-                    <property name="styleSheet">
-                     <string notr="true">background-color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
+                  <item row="1" column="1">
+                   <layout class="QVBoxLayout" name="verticalLayout_19">
+                    <item>
+                     <widget class="QLabel" name="display_4">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item row="1" column="2">
+                   <layout class="QVBoxLayout" name="verticalLayout_20">
+                    <item>
+                     <widget class="QLabel" name="display_6">
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>
                 <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_6">
-                  <property name="sizeConstraint">
-                   <enum>QLayout::SetFixedSize</enum>
+                 <widget class="QWidget" name="widget" native="true">
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>500</height>
+                   </size>
                   </property>
-                  <item>
-                   <spacer name="verticalSpacer_14">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>29</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QWidget" name="widget" native="true">
-                    <property name="minimumSize">
-                     <size>
-                      <width>200</width>
-                      <height>500</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>200</width>
-                      <height>16777215</height>
-                     </size>
-                    </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">*{
+background: #1C1D25;
+}
+QToolButton{
+background: #2A2F3C ;
+}
+
+QToolButton:hover{
+background:#2A2F3C ;
+}
+QToolButton:pressed{
+background:#1C1D25;
+}</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_22">
+                   <item>
+                    <spacer name="verticalSpacer_35">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_35">
+                     <item>
+                      <spacer name="horizontalSpacer_24">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="addNew_pushButton">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">*{
+FONT-SIZE: 18px;
+background: #2A2F3C ;
+}
+QToolButton:hover{
+background:#2A2F3C ;
+}
+QToolButton:pressed{
+background:#1C1D25;
+}</string>
+                       </property>
+                       <property name="text">
+                        <string>Add Camera</string>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/plus-8-24.png</normaloff>:/logo/plus-8-24.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>100</width>
+                         <height>100</height>
+                        </size>
+                       </property>
+                       <property name="popupMode">
+                        <enum>QToolButton::DelayedPopup</enum>
+                       </property>
+                       <property name="toolButtonStyle">
+                        <enum>Qt::ToolButtonTextUnderIcon</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_19">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_28">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
                     <widget class="QLabel" name="cameras_label">
-                     <property name="geometry">
-                      <rect>
-                       <x>50</x>
-                       <y>10</y>
-                       <width>121</width>
-                       <height>41</height>
-                      </rect>
+                     <property name="styleSheet">
+                      <string notr="true">font-size:20px;</string>
                      </property>
                      <property name="text">
-                      <string>CAMERAS</string>
+                      <string>CAMERAS LIST</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
-                    <widget class="QPushButton" name="cam01_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>60</y>
-                       <width>158</width>
-                       <height>31</height>
-                      </rect>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_14">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
                      </property>
-                     <property name="text">
-                      <string>CAMERA_01</string>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
                      </property>
-                    </widget>
-                    <widget class="QPushButton" name="cam03_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>160</y>
-                       <width>158</width>
-                       <height>31</height>
-                      </rect>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
                      </property>
-                     <property name="text">
-                      <string>CAMERA_03</string>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_12">
+                     <item>
+                      <widget class="QLabel" name="camLabel1">
+                       <property name="styleSheet">
+                        <string notr="true">font-size:16px;</string>
+                       </property>
+                       <property name="text">
+                        <string>CAMERA_01</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="cam01_pushButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/edit-2-24.png</normaloff>:/logo/edit-2-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="displaycross_1">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/x-mark-24.png</normaloff>:/logo/x-mark-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_30">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
                      </property>
-                    </widget>
-                    <widget class="QPushButton" name="cam02_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>110</y>
-                       <width>158</width>
-                       <height>31</height>
-                      </rect>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
                      </property>
-                     <property name="text">
-                      <string>CAMERA_02</string>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>10</height>
+                      </size>
                      </property>
-                    </widget>
-                    <widget class="QPushButton" name="cam04_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>210</y>
-                       <width>158</width>
-                       <height>31</height>
-                      </rect>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_21">
+                     <item>
+                      <widget class="QLabel" name="camLabel2">
+                       <property name="styleSheet">
+                        <string notr="true">font-size:16px;</string>
+                       </property>
+                       <property name="text">
+                        <string>CAMERA_02</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="cam02_pushButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/edit-2-24.png</normaloff>:/logo/edit-2-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="displaycross_2">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/x-mark-24.png</normaloff>:/logo/x-mark-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_31">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
                      </property>
-                     <property name="text">
-                      <string>CAMERA_04</string>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
                      </property>
-                    </widget>
-                    <widget class="QPushButton" name="cam05_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>260</y>
-                       <width>158</width>
-                       <height>31</height>
-                      </rect>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>10</height>
+                      </size>
                      </property>
-                     <property name="text">
-                      <string>CAMERA_05</string>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_31">
+                     <item>
+                      <widget class="QLabel" name="camLabel3">
+                       <property name="styleSheet">
+                        <string notr="true">font-size:16px;</string>
+                       </property>
+                       <property name="text">
+                        <string>CAMERA_03</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="cam03_pushButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/edit-2-24.png</normaloff>:/logo/edit-2-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="displaycross_3">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/x-mark-24.png</normaloff>:/logo/x-mark-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_32">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
                      </property>
-                    </widget>
-                    <widget class="QPushButton" name="cam06_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>310</y>
-                       <width>158</width>
-                       <height>31</height>
-                      </rect>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
                      </property>
-                     <property name="text">
-                      <string>CAMERA_06</string>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>10</height>
+                      </size>
                      </property>
-                    </widget>
-                    <widget class="QPushButton" name="addNew_pushButton">
-                     <property name="geometry">
-                      <rect>
-                       <x>20</x>
-                       <y>400</y>
-                       <width>171</width>
-                       <height>31</height>
-                      </rect>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_34">
+                     <item>
+                      <widget class="QLabel" name="camLabel4">
+                       <property name="styleSheet">
+                        <string notr="true">font-size:16px;</string>
+                       </property>
+                       <property name="text">
+                        <string>CAMERA_04</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="cam04_pushButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/edit-2-24.png</normaloff>:/logo/edit-2-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="displaycross_4">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/x-mark-24.png</normaloff>:/logo/x-mark-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_33">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
                      </property>
-                     <property name="text">
-                      <string>ADD NEW</string>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
                      </property>
-                    </widget>
-                   </widget>
-                  </item>
-                 </layout>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>10</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_32">
+                     <item>
+                      <widget class="QLabel" name="camLabel5">
+                       <property name="styleSheet">
+                        <string notr="true">font-size:16px;</string>
+                       </property>
+                       <property name="text">
+                        <string>CAMERA_05</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="cam05_pushButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/edit-2-24.png</normaloff>:/logo/edit-2-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="displaycross_5">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/x-mark-24.png</normaloff>:/logo/x-mark-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_34">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeType">
+                      <enum>QSizePolicy::Fixed</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>10</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_33">
+                     <item>
+                      <widget class="QLabel" name="camLabel6">
+                       <property name="styleSheet">
+                        <string notr="true">font-size:16px;</string>
+                       </property>
+                       <property name="text">
+                        <string>CAMERA_06</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="cam06_pushButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/edit-2-24.png</normaloff>:/logo/edit-2-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QToolButton" name="displaycross_6">
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="resource01.qrc">
+                         <normaloff>:/logo/x-mark-24.png</normaloff>:/logo/x-mark-24.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_13">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_48">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -1425,9 +1793,19 @@ font-weight:bold;
 QTableWidget QTableCornerButton::section {
     background-color: #646464;
     border: 1px solid black;
-}</string>
+}
+QPushButton{
+font-weight:bold;
+color:white ;
+background:#1C1D25;
+}
+QPushButton:hover{
+color:white;
+background-color:black;
+}
+</string>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_3">
+               <layout class="QVBoxLayout" name="verticalLayout_12">
                 <item>
                  <spacer name="verticalSpacer_2">
                   <property name="orientation">
@@ -1548,55 +1926,127 @@ font-size:24px</string>
                  </layout>
                 </item>
                 <item>
-                 <spacer name="verticalSpacer_9">
+                 <spacer name="verticalSpacer_21">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
                   <property name="sizeType">
-                   <enum>QSizePolicy::Minimum</enum>
+                   <enum>QSizePolicy::Fixed</enum>
                   </property>
                   <property name="sizeHint" stdset="0">
                    <size>
-                    <width>1</width>
-                    <height>10</height>
+                    <width>5</width>
+                    <height>5</height>
                    </size>
                   </property>
                  </spacer>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <layout class="QHBoxLayout" name="horizontalLayout_28">
                   <item>
-                   <spacer name="horizontalSpacer_4">
+                   <spacer name="horizontalSpacer_32">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
                     <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
+                     <enum>QSizePolicy::Minimum</enum>
                     </property>
                     <property name="sizeHint" stdset="0">
                      <size>
-                      <width>30</width>
+                      <width>29</width>
                       <height>20</height>
                      </size>
                     </property>
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QTableWidget" name="alarm_tableWidget">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>800</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">QTableWidget{ 
+                   <layout class="QVBoxLayout" name="verticalLayout_11">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_29">
+                      <item>
+                       <spacer name="horizontalSpacer_46">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                         <enum>QSizePolicy::Fixed</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>8</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="anomalySearch_lineEdit">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>31</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>300</width>
+                          <height>31</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QLineEdit{
+background-color:#1C1D25;
+border:#1C1D25;
+color:white;
+font-size:18px;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string>Enter data to search</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="anomalySearch_pushButton">
+                        <property name="text">
+                         <string>Search</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_43">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                         <enum>QSizePolicy::Expanding</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QTableWidget" name="alarm_tableWidget">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>650</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QTableWidget{ 
   width: 100%;
    padding: 10px;
   text-align: left;
@@ -1624,96 +2074,103 @@ QTableWidget QTableCornerButton::section {
     background-color: #2A2F3C
     border: 1px solid black;
 }</string>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Plain</enum>
-                    </property>
-                    <property name="sortingEnabled">
-                     <bool>true</bool>
-                    </property>
-                    <attribute name="horizontalHeaderCascadingSectionResizes">
-                     <bool>true</bool>
-                    </attribute>
-                    <attribute name="horizontalHeaderDefaultSectionSize">
-                     <number>180</number>
-                    </attribute>
-                    <attribute name="horizontalHeaderMinimumSectionSize">
-                     <number>60</number>
-                    </attribute>
-                    <attribute name="horizontalHeaderStretchLastSection">
-                     <bool>true</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderVisible">
-                     <bool>false</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderMinimumSectionSize">
-                     <number>30</number>
-                    </attribute>
-                    <row>
-                     <property name="text">
-                      <string>1</string>
-                     </property>
-                    </row>
-                    <row>
-                     <property name="text">
-                      <string>2</string>
-                     </property>
-                    </row>
-                    <row>
-                     <property name="text">
-                      <string>3</string>
-                     </property>
-                    </row>
-                    <row>
-                     <property name="text">
-                      <string>4</string>
-                     </property>
-                    </row>
-                    <row>
-                     <property name="text">
-                      <string>5</string>
-                     </property>
-                    </row>
-                    <column>
-                     <property name="text">
-                      <string>Camera ID</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Event</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Date</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>Time</string>
-                     </property>
-                    </column>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Expanding</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>120</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::NoFrame</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Plain</enum>
+                      </property>
+                      <property name="sortingEnabled">
+                       <bool>true</bool>
+                      </property>
+                      <attribute name="horizontalHeaderCascadingSectionResizes">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="horizontalHeaderDefaultSectionSize">
+                       <number>200</number>
+                      </attribute>
+                      <attribute name="horizontalHeaderMinimumSectionSize">
+                       <number>60</number>
+                      </attribute>
+                      <attribute name="horizontalHeaderStretchLastSection">
+                       <bool>true</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderVisible">
+                       <bool>false</bool>
+                      </attribute>
+                      <attribute name="verticalHeaderMinimumSectionSize">
+                       <number>30</number>
+                      </attribute>
+                      <row>
+                       <property name="text">
+                        <string>1</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>2</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>3</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>4</string>
+                       </property>
+                      </row>
+                      <row>
+                       <property name="text">
+                        <string>5</string>
+                       </property>
+                      </row>
+                      <column>
+                       <property name="text">
+                        <string>Camera ID</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Event</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Date</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Time</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>Video URL</string>
+                       </property>
+                      </column>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_9">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Minimum</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>1</width>
+                        <height>10</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>
@@ -2774,7 +3231,7 @@ QTableWidget QTableCornerButton::section {
 }</string>
                           </property>
                           <attribute name="horizontalHeaderVisible">
-                           <bool>true</bool>
+                           <bool>false</bool>
                           </attribute>
                           <attribute name="horizontalHeaderCascadingSectionResizes">
                            <bool>true</bool>
@@ -3077,82 +3534,7 @@ font-size: 16px;</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="dialog_page">
-               <widget class="QFrame" name="frame">
-                <property name="geometry">
-                 <rect>
-                  <x>180</x>
-                  <y>110</y>
-                  <width>601</width>
-                  <height>451</height>
-                 </rect>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_9">
-                 <item>
-                  <widget class="QLabel" name="addIPCam_label">
-                   <property name="text">
-                    <string>Add camera using IP Address</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="addIPCam_field">
-                   <property name="text">
-                    <string>ENTER IP ADDRESS HERE</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="addIPCam_pushButton">
-                   <property name="text">
-                    <string>ADD</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="openDir_label">
-                   <property name="text">
-                    <string>Add video by file from Directory</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="openDir_pushButton">
-                   <property name="text">
-                    <string>OPEN</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="openWebcam_label">
-                   <property name="text">
-                    <string>Add using Webcam</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="openWebcam_pushButton">
-                   <property name="text">
-                    <string>OPEN WEBCAM</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="cancel_PushButton">
-                   <property name="text">
-                    <string>CANCEL</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
+              <widget class="QWidget" name="dialog_page"/>
               <widget class="QWidget" name="language_page">
                <widget class="QRadioButton" name="english_radioButton">
                 <property name="geometry">
@@ -3216,6 +3598,204 @@ COLOR:WHITE;</string>
                  <string>ACCESS DENIED</string>
                 </property>
                </widget>
+              </widget>
+              <widget class="QWidget" name="edit_page">
+               <layout class="QVBoxLayout" name="verticalLayout_14">
+                <item>
+                 <spacer name="verticalSpacer_24">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_30">
+                  <item>
+                   <spacer name="horizontalSpacer_44">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <layout class="QFormLayout" name="account_form_2">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="editInfo_label">
+                      <property name="styleSheet">
+                       <string notr="true">FONT-WEIGHT:BOLD;
+font-size:24px;</string>
+                      </property>
+                      <property name="text">
+                       <string>EDIT INFORMATION</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <spacer name="verticalSpacer_22">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QLabel" name="fname_label_2">
+                      <property name="text">
+                       <string>First Name:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QLineEdit" name="fname_field_2">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QLabel" name="lname_label_2">
+                      <property name="text">
+                       <string>Last Name:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QLineEdit" name="lname_field_2">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="username_label_2">
+                      <property name="text">
+                       <string>Username:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="1">
+                     <widget class="QLineEdit" name="username_field_2">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="0">
+                     <widget class="QLabel" name="password_label_2">
+                      <property name="text">
+                       <string>Password:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="1">
+                     <widget class="QLineEdit" name="password_field_2">
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="echoMode">
+                       <enum>QLineEdit::Password</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="0">
+                     <widget class="QLabel" name="contactInfo_label_2">
+                      <property name="text">
+                       <string>Contact Info:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="6" column="1">
+                     <widget class="QLineEdit" name="contactInfo_field_2">
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="7" column="0">
+                     <widget class="QLabel" name="address_label_2">
+                      <property name="text">
+                       <string>Address:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="7" column="1">
+                     <widget class="QTextEdit" name="address_field_2">
+                      <property name="styleSheet">
+                       <string notr="true">border-radius: 0px;</string>
+                      </property>
+                      <property name="html">
+                       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'century gothic'; font-size:18px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="8" column="1">
+                     <spacer name="verticalSpacer_23">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="9" column="1">
+                     <widget class="QPushButton" name="edit_pushButton_2">
+                      <property name="styleSheet">
+                       <string notr="true">FONT-SIZE: 18PX;</string>
+                      </property>
+                      <property name="text">
+                       <string>EDIT</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_47">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
               </widget>
              </widget>
             </item>
